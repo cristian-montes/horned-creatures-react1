@@ -4,7 +4,7 @@ import ImageItem from './ImageItem.js';
 class ImageList extends Component {
     render() { 
         return (  
-            <div>
+            <div className={'mainDivImg'}>
                 {this.props.cuernos.map((item) => {
                     return <ImageItem 
                     keyword={item.keyword} 

@@ -1,5 +1,11 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-content: stretch;
+  justify-content: space-around;
+  align-items: center;
+ 
 }
 
 .App-logo {
@@ -36,3 +42,9 @@
     transform: rotate(360deg);
   }
 }
+
+.dropDown{
+  margin-bottom: 30px;
+  align-items: center;
+}
+

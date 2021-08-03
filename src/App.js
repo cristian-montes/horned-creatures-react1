@@ -12,7 +12,7 @@ class App extends Component {
   handleChange = (e) => {
       this.setState({keyword: e.target.value})
   };
-  render() { 
+  render(){ 
         const filteredHorns = Data.filter(
           (item) => this.state.keyword === 'All' || item.keyword === this.state.keyword
         );
@@ -20,7 +20,8 @@ class App extends Component {
     return (   
       <div className="App">
         <h1>Horned Creatures</h1>
-        <select onChange={this.handleChange}>
+        <select onChange={this.handleChange} className={'dropDown'}>
+          <option value="All">All</option>
           <option value= "narwhal">Narwhal</option>
           <option value='rhino'>Rhino</option>
           <option value='unicorn'>Unicorn</option>
@@ -34,7 +35,7 @@ class App extends Component {
           <option value='dragon'>Dragon</option>
         </select>
 
-         <ImageList cuernos={filteredHorns}/>
+         <ImageList cuernos={filteredHorns} className={'img-div'}/>
       </div> );
   }
 }
