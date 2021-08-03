@@ -2,6 +2,7 @@ img {
     width: 300px;
     height: 200px;
     margin-top: 10px;
+    border-radius: 20px;
 }
 
 .div-image{
@@ -10,6 +11,7 @@ img {
     border-color: black;
     width: 320px;
     height: 370px;
+    background-color: #f8edeb;
     border-radius: 20px;
     margin-bottom: 15px;
 }
