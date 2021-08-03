@@ -1,25 +1,42 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import Data from './data/Data';
+import ImageList from './image/ImageList.js';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+class App extends Component {
+  state = {  
+    keyword:'All',
+  }
+  handleChange = (e) => {
+      this.setState({keyword: e.target.value})
+  };
+  render() { 
+        const filteredHorns = Data.filter(
+          (item) => this.state.keyword === 'All' || item.keyword === this.state.keyword
+        );
+
+    return (   
+      <div className="App">
+        <h1>Horned Creatures</h1>
+        <select onChange={this.handleChange}>
+          <option value= "narwhal">Narwhal</option>
+          <option value='rhino'>Rhino</option>
+          <option value='unicorn'>Unicorn</option>
+          <option value='unilego'>unilego</option>
+          <option value='triceratops'>Triceratops</option>
+          <option value='markhor'>Markhor</option>
+          <option value='mouflon'>Mouflon</option>
+          <option value='addax'>Addax</option>
+          <option value='chameleon'>Chameleon</option>
+          <option value='lizard'>Lizard</option>
+          <option value='dragon'>Dragon</option>
+        </select>
+
+         <ImageList cuernos={filteredHorns}/>
+      </div> );
+  }
 }
-
+ 
 export default App;
