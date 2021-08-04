@@ -3,7 +3,7 @@ import './Image.css';
 class ImageItem extends Component {
     state = {}
     render() { 
-        console.log(this.props.cuernoData);
+        
         return (  
             <div className={'div-image'}>
                 <img src={this.props.cuernoData.url} alt={this.props.cuernoData.keyword}/>
