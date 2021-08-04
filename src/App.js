@@ -13,10 +13,9 @@ class App extends Component {
       this.setState({keyword: e.target.value})
   };
   render(){ 
-        const filteredHorns = Data.filter(
+        const filteredKeywords = Data.filter(
           (item) => this.state.keyword === 'All' || item.keyword === this.state.keyword
         );
-
     return (   
       <div className="App">
         <h1>Horned Creatures</h1>
@@ -35,7 +34,7 @@ class App extends Component {
           <option value='dragon'>Dragon</option>
         </select>
 
-         <ImageList cuernos={filteredHorns} className={'img-div'}/>
+         <ImageList cuernos={filteredKeywords} className={'img-div'}/>
       </div> );
   }
 }
