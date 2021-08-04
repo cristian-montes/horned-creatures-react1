@@ -1,32 +1,43 @@
 import React, { Component } from 'react';
 import './App.css';
 import Data from './data/Data';
+// import KeywordData from './data/DataUtils';
 import ImageList from './image/ImageList.js';
 import DropDown from './dropdown/DropDown';
 
-// const dataOptions = [...Data];
-// console.log(dataOptions);
 
 class App extends Component {
   state = {  
     keyword:'All',
     horns:'All',
   }
-  keywordOptions= ["All","narwhal",'rhino','unicorn','unilego','triceratops','markhor','mouflon','addax','chameleon','lizard','dragon'];
+
+  
   hornsOptions = ['All', 1, 2, 3, 100];
-
-
-
+  
+  
   handleChange = (e) => {
-      this.setState({keyword: e.target.value})
+    this.setState({keyword: e.target.value})
   };
-
+  
   handleChangeHorns = (e) => {
     this.setState({ horns: e.target.value })
-};
-
+  };
 
   render(){ 
+ 
+        // MUGING DATA TO GET KEYWORD VALUES
+        
+        let keyOpts = Data.map((word) => {
+          return word.keyword});
+         
+        let newKeyOpts = ['All',...keyOpts]
+          
+         let keywordOptions = newKeyOpts.filter((elem, pos)=> {
+            return newKeyOpts.indexOf(elem) === pos;
+        })
+  
+
         const filteredKeywords = Data.filter(
           (item) => this.state.keyword === "All" || item.keyword === this.state.keyword
         );
@@ -39,7 +50,7 @@ class App extends Component {
       <div className="App">
         <h1>Horned Creatures</h1>
            <DropDown
-              options={this.keywordOptions}
+              options={keywordOptions}
               changeEvent={this.handleChange}
           />
           <DropDown
@@ -56,3 +67,16 @@ class App extends Component {
  
 export default App;
 
+
+
+//   function keyValues(arr, keyName){
+//     let keyOpts = arr.map((word) => {
+//         return word.keyName});
+       
+//       let newKeyOpts = ['All',...keyOpts]
+        
+//        let keywordOptions = newKeyOpts.filter((elem, pos)=> {
+//           return newKeyOpts.indexOf(elem) === pos;
+//       })
+//       return keywordOptions;
+// }
