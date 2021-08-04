@@ -3,9 +3,10 @@ import ImageItem from './ImageItem.js';
 
 class ImageList extends Component {
     render() { 
+        const{ cuernos } = this.props;
         return (  
             <div className={'mainDiv'}>
-                {this.props.cuernos.map((cuerno) => {
+                {cuernos.map((cuerno) => {
                     return <ImageItem 
                     key={cuerno.id} 
                     cuernoData={cuerno}/>

@@ -4,7 +4,8 @@ import Data from './data/Data';
 import ImageList from './image/ImageList.js';
 import DropDown from './dropdown/DropDown';
 
-
+// const dataOptions = [...Data];
+// console.log(dataOptions);
 
 class App extends Component {
   state = {  
@@ -15,12 +16,12 @@ class App extends Component {
   hornsOptions = ['All', 1, 2, 3, 100];
 
 
+
   handleChange = (e) => {
       this.setState({keyword: e.target.value})
   };
 
   handleChangeHorns = (e) => {
-    // const numHorns = Number(e.target.value)
     this.setState({ horns: e.target.value })
 };
 
@@ -47,7 +48,6 @@ class App extends Component {
           />
          <ImageList 
             cuernos={filteredHorns}
-            // changeEvent={this.handleChange} 
             className={'img-div'}
          />
       </div> );
