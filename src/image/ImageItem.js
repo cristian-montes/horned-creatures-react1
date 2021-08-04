@@ -3,20 +3,20 @@ import './Image.css';
 class ImageItem extends Component {
     state = {}
     render() { 
-        console.log(this.props.cuernoData);
+        const { cuernoData } = this.props;
         return (  
             <div className={'div-image'}>
-                <img src={this.props.cuernoData.url} alt={this.props.cuernoData.keyword}/>
+                <img src={cuernoData.url} alt={cuernoData.keyword}/>
                 <p>
-               I am a {this.props.cuernoData.keyword}
+               I am a {cuernoData.keyword}
                 </p> 
                 <p>
-                My title is {this.props.cuernoData.title}
+                My title is {cuernoData.title}
                 </p> 
                 <p>
                 About me:
                 <br/>
-                 {this.props.cuernoData.description}
+                 {cuernoData.description}
                 </p> 
             </div>
 
